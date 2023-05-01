@@ -8,5 +8,5 @@ def display(playerstats, selected_team, selected_pos):
     st.write('Data Dimension: ' + str(df_selected_team_pos.shape[0]) + ' rows and ' + str(df_selected_team_pos.shape[1]) + ' columns.')
     # display dataframe
     st.dataframe(df_selected_team_pos)
-    
+
     return df_selected_team_pos

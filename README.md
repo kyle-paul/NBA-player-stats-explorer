@@ -1,1 +1,1 @@
-# NBA-player-stats-explorer
+# NBA Player Stats Explorer
