@@ -8,6 +8,7 @@ from load_data import load_data
 from side_bar import header, selection
 from display_data import display
 from download_file import filedownload
+from heatmap import heatmap
 
 st.title('NBA Player Stats Explorer')
 
@@ -33,14 +34,4 @@ st.markdown(filedownload(df_selected_team_pos), unsafe_allow_html=True)
 
 # Heatmap
 if st.button('Intercorrelation Heatmap'):
-    st.header('Intercorrelation Matrix Heatmap')
-    df_selected_team_pos.to_csv('output.csv',index=False)
-    df = pd.read_csv('output.csv')
-
-    corr = df.corr()
-    mask = np.zeros_like(corr)
-    mask[np.triu_indices_from(mask)] = True
-    with sns.axes_style("white"):
-        f, ax = plt.subplots(figsize=(7, 5))
-        ax = sns.heatmap(corr, mask=mask, vmax=1, square=True)
-    st.pyplot()
+    heatmap(df_selected_team_pos)
